@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+
+    double inteiro, decimal,n;
+    int c100,c50,c20,c10,c5,c2,m1,m2,m3,m4,m5,m6,reais,centavos;
+    scanf("%lf", &n);
+    decimal=modf(n, &inteiro);
+    reais=inteiro;
+    centavos=decimal*100;
+    c100=reais/100;
+    reais%=100;
+    c50=reais/50;
+    reais%=50;
+    c20=(reais/20);
+    reais%=20;
+    c10=(reais/10);
+    reais%=10;
+    c5=(reais/5);
+    reais%=5;
+    c2=(reais/2);
+    reais%=2;
+    reais=
+    m1=reais/1;
+    m2=centavos/50;
+    centavos%=50;
+    m3=centavos/25;
+    centavos%=25;
+    m4=centavos/10;
+    centavos%=10;
+    m5=centavos/5;
+    centavos%=5;
+    m6=centavos;
+    printf("NOTAS:\n");
+    printf("%d nota(s) de R$ 100.00\n", c100);
+    printf("%d nota(s) de R$ 50.00\n", c50);
+    printf("%d nota(s) de R$ 20.00\n", c20);
+    printf("%d nota(s) de R$ 10.00\n", c10);
+    printf("%d nota(s) de R$ 5.00\n", c5);
+    printf("%d nota(s) de R$ 2.00\n", c2);
+    printf("MOEDAS:\n");
+    printf("%d moeda(s) de R$ 1.00\n", m1);
+    printf("%d moeda(s) de R$ 0.50\n", m2);
+    printf("%d moeda(s) de R$ 0.25\n", m3);
+    printf("%d moeda(s) de R$ 0.10\n", m4);
+    printf("%d moeda(s) de R$ 0.05\n", m5);
+    printf("%d moeda(s) de R$ 0.01\n", m6);
+    return 0;
+}
+
