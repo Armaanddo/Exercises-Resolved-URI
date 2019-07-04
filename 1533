@@ -1,0 +1,79 @@
+Interpretação
+        Usuario entra com uma lista de numeros e a partir dessa lista retornar a posicao do segundo maior
+        numero
+    Contexto
+        Entrada
+        Um N inteiro 2<=N<=1000
+        Um vetor V [10000], onde os valores tem que ficar entre >=1 e <=N
+        Saida
+        A posição do segundo maior valor no vetor
+    Estrutura de Dados
+        Uma variavel N, para numero de caso de teste
+        Uma variavel j, para pecorrer o vetor
+        Uma variavel aux para ir recebendo o maior de cada posicao o vetor
+        Um vetor A do tamanho de numero de casos de testes
+        Uma variavel i para percorrer o vetor
+        Um vetor pos para pegar a posicao do maior
+        
+    Algoritmo
+        Le a variavel N de numero de caso de testes
+        Cria um laço para parar apenas quando N for diferente de 0
+            Se n for igual a 0, sai do programa 
+            Cria um laço i começando em 0, ate N
+                Le os valores para o vetor
+                pos na pos i vai receber incremento de mais um
+            Fim do laço
+            Cria um laco i começa em 0 ate N
+                Cria um laco de j iniciando com i mais a prox posicao ate N
+                    se o vetor na posicao i for maior que o vetor na posicao j +1- prox posicao
+                        aux recebe o valor do vetor na posicao i que é o maior
+                        vetor na posicao i recebe o vetor na posicao j
+                        vetor na posicao j recebe  aux
+                        aux recebe pos i 
+                        pos na posicao i recebe a posicao j
+                        pos na posicao j recebe aux
+                        Fim do laco
+                    Fim do laco
+            Fim do laco
+        
+        imprime pos com decremento de -2 para mostrar o segundo maior valor
+        Le o proximo N para caso de teste
+    Fim do laco
+Fim do algoritmo
+    Codigo
+*/#include <stdio.h>
+
+int main() {
+
+    int n, j, aux;
+    scanf("%d", &n);
+    while(n!=0){
+        if(n==0)
+        return 0;
+        int a[n], i, pos[n];
+        for(i=0;i<n;i++)
+        {
+            scanf("%d", &a[i]);
+            pos[i]=i+1;
+        }
+        for(i=0;i<n;i++)
+        {
+            for(j=i+1;j<n;j++)
+            {
+                if(a[i]>a[j])
+                {
+                aux=a[i];
+                a[i]=a[j];
+                a[j]=aux;
+                aux=pos[i];
+                pos[i]=pos[j];
+                pos[j]=aux;
+                }
+            }
+    }
+    printf("%d\n", pos[n-2]);
+    scanf("%d", &n);
+    }
+
+    return 0;
+}
