@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int vet[20],aux[20];
+    int j=0,i,a;
+    for(a=0;a<20;a++){
+        scanf("%d", &vet[a]);
+    }
+    i=19;
+    while(i>-1){
+        aux[j]=vet[i];
+        j++;
+        i--;
+    }
+    for(a=0;a<20;a++){
+        printf("N[%d] = %d\n", a,aux[a]);
+    }
+    return 0;
+}

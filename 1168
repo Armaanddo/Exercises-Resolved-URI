@@ -1,0 +1,68 @@
+#include <stdio.h>
+int um(char v){
+    return 2;
+}
+int dois(char v){
+    return 5;
+}
+int tres(char v){
+    return 5;
+}
+int quatro(char v){
+    return 4;
+}
+int cinco(char v){
+    return 5;
+}
+int seis(char v){
+    return 6;
+}
+int sete(char v){
+    return 3;
+}
+int oito(char v){
+    return 7;
+}
+int nove(char v){
+    return 6;
+}
+int zero(char v){
+    return 6;
+}
+int main() {
+    char vet[1000000];
+    int n, i = 0, s = 0, j = 0;
+    char a[1];
+    scanf("%d", &n);
+    while(n--) {
+        scanf("%s", &vet[i]);
+        s = 0;
+        while(vet[i]!='\0'){
+            if (vet[i] == '1') {
+                s += um(vet[i]);
+            } else if (vet[i] == '2') {
+                s += dois(vet[i]);
+            } else if (vet[i] == '3') {
+                s += tres(vet[i]);
+            } else if (vet[i] == '4') {
+                s += quatro(vet[i]);
+            } else if (vet[i] == '5') {
+                s += cinco(vet[i]);
+            } else if (vet[i] == '6') {
+                s += seis(vet[i]);
+            } else if (vet[i] == '7') {
+                s += sete(vet[i]);
+            } else if (vet[i] == '8') {
+                s += oito(vet[i]);
+            } else if (vet[i] == '9') {
+                s += nove(vet[i]);
+            } else if (vet[i] == '0') {
+                s += zero(vet[i]);
+            }
+            i++;
+        }
+        printf("%d leds\n", s);
+        j++;
+    }
+    return 0;
+}
